@@ -3,27 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
-
-#diff aproach
-def bernoulli(z):
-    if z == 0:
-        return 1
-    else:
-        total = 0
-        for i in range (0, z + 1):
-            #math.comb nos retorna o coeficiente binomial de uma expansao que no caso da tangente é o bernoulli
-            total += math.comb(z, i) * bernoulli(i) / (z - i + 1)
-        return 1 - total
-
-def expansaoTanX(x0, n):
-    somaTanx = 0
-    for i in range(1, n+1):
-        somaTanx += ((bernoulli(2 * i)) / math.factorial(2 * i)) * ((-4)**i) * (1 - (4**i)) * (x0**(2 * i - 1))
-    return somaTanx
-
-
 #aproximaçao da tangente por taylor / maclaurin utilizando numero de bernoulli
+# relativamente precisa para ate 6-8 termos
 def tan_Taylor(x0, n):
     somaTan = 0
     for i in range(1 , n + 1):
@@ -40,7 +21,10 @@ def tan_Taylor(x0, n):
         somaTan +=  pow(-4, i) * (1 - pow(4, i)) * B * pow(x0, 2 * i - 1) / math.factorial(2 * i)
     return somaTan
 
-#aproximaçao da tangente usando relações trigonométricas
+
+
+#aproximaçao da tangente usando relações trigonométricas tan = sen/cos utilizamos as aproximaçoes de seno e cosseno para o calculo 
+#precisao otima ate 15 algarismos apos a virgula usando 20 termos
 def tanSinCos(x0, n):
     tan = np.divide(seno(x0, n), cosseno(x0, n))
     return tan
@@ -66,30 +50,25 @@ def seno(x0, n):
         seno +=(x0**(2.0*i + 1))/math.factorial(2*i+1)*sinal
     return seno 
 
-
-
 print("Tangente numpy: %.20f" % np.tan(1))
 tanExpansion = tan_Taylor(1, 6)
 print("Tangente aproximada por taylor/maclaurin: %.20f" %tanExpansion)
-tanExpansion2 = expansaoTanX(1, 1)
-print("Tangente aproximada por taylor/maclaurin versao 2: %.20f" %tanExpansion2)
-
 tanSC = tanSinCos(1, 20)
 print("Tangente aproximada por taylor/maclaurin seno cossseno: %.20f" %tanSC)
 
-
-
-
-
 x = np.linspace(-2*np.pi, 2*np.pi, 100)
-y1 = np.tan(1)
-y2 = tanSinCos(1, 20)
+
+y1 = np.tan(x)
+y2 = tanSinCos(x, 10)
+y3 = tanSinCos(x, 6)
+y4 = tanSinCos(x, 1)
 
 fig, ax = plt.subplots()
 fig.set_size_inches(20, 8)
-ax.plot(1 , y1, linewidth = 2.0, label ="numpy Tan")
-ax.plot(1 , y2, linewidth = 2.0, label ="Tan")
-
+ax.plot(x, y1, linewidth = 2.0, label ="numpy Tan")
+ax.plot(x, y2, linewidth = 2.0, label ="Tan com 10 termos")
+ax.plot(x, y3, linewidth = 2.0, label ="Tan com 6 termos")
+ax.plot(x, y4, linewidth = 2.0, label ="Tan com 1 termos")
 ax.legend()
 ax.grid()
 
