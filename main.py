@@ -18,7 +18,7 @@ def tan_Taylor(x0, n):
 
             B += aux / ((j + 1))
 
-        somaTan +=  pow(-4, i) * (1 - pow(4, i)) * B * pow(x0, 2 * i - 1) / math.factorial(2 * i)
+        somaTan =  np.add(somaTan, pow(-4, i) * (1 - pow(4, i)) * B * pow(x0, 2 * i - 1) / math.factorial(2 * i))
     return somaTan
 
 
