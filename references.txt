@@ -3,3 +3,8 @@ https://www.youtube.com/watch?v=ET3qjWs7g7w&ab_channel=blackpenredpen
 
 tanx usando bernoulli
 https://proofwiki.org/wiki/Power_Series_Expansion_for_Tangent_Function
+
+Derivadas
+https://www.petervis.com/mathematics/maclaurin_series/maclaurin_series_tanx.html
+
+https://medium.com/@tasneemmuneeraprottyasha/why-doesnt-the-maclaurin-taylor-series-of-tanx-have-a-pattern-f09665a65b6d
