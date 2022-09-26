@@ -54,7 +54,7 @@ print("Tangente numpy: %.20f" % np.tan(1))
 tanExpansion = tan_Taylor(1, 6)
 print("Tangente aproximada por taylor/maclaurin: %.20f" %tanExpansion)
 tanSC = tanSinCos(1, 20)
-print("Tangente aproximada por taylor/maclaurin seno cossseno: %.20f" %tanSC)
+print("Tangente aproximada por taylor seno cossseno: %.20f" %tanSC)
 
 x = np.linspace(-2*np.pi, 2*np.pi, 100)
 
