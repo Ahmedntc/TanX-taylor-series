@@ -8,3 +8,12 @@ Derivadas
 https://www.petervis.com/mathematics/maclaurin_series/maclaurin_series_tanx.html
 
 https://medium.com/@tasneemmuneeraprottyasha/why-doesnt-the-maclaurin-taylor-series-of-tanx-have-a-pattern-f09665a65b6d
+
+Seno e cosseno 
+https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine
+
+bernoulli
+https://proofwiki.org/wiki/Definition:Bernoulli_Numbers
+
+Codigo de referencia para o uso do bernoulli na função da tangente
+https://www.geeksforgeeks.org/sum-of-the-tanx-expansion-upto-n-terms/
