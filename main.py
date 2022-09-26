@@ -47,7 +47,7 @@ def seno(x0, n):
     seno = 0
     for i in range(n):
         sinal = (-1)**i  
-        seno +=(x0**(2.0*i + 1))/math.factorial(2*i+1)*sinal
+        seno =np.add(seno,(x0**(2.0*i + 1))/math.factorial(2*i+1)*sinal)
     return seno 
 
 print("Tangente numpy: %.20f" % np.tan(1))
